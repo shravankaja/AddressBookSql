@@ -207,3 +207,77 @@ mysql> select cd.*,ct.contact_type from contact_details as cd right join contact
 | Abby       | Cherry    | Hyderabad | Telanagan | Whitefield | 510081 |   8545691963 | 852@xyz.com | myaddressbook     | Friend       |
 +------------+-----------+-----------+-----------+------------+--------+--------------+-------------+-------------------+--------------+
 2 rows in set (0.00 sec)
+
+12) UC12
+
+mysql> desc contact_details;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| first_name        | varchar(150) | NO   | PRI | NULL    |       |
+| last_name         | varchar(150) | NO   |     | NULL    |       |
+| city              | varchar(150) | YES  |     | NULL    |       |
+| state             | varchar(150) | YES  |     | NULL    |       |
+| address           | varchar(150) | YES  |     | NULL    |       |
+| zip               | int          | YES  |     | NULL    |       |
+| phone_number      | bigint       | NO   |     | NULL    |       |
+| email             | varchar(150) | YES  |     | NULL    |       |
+| address_book_name | varchar(150) | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+9 rows in set (0.03 sec)
+
+mysql> show tables;
++-----------------------+
+| Tables_in_addressbook |
++-----------------------+
+| contact_details       |
+| contact_types         |
++-----------------------+
+2 rows in set (0.07 sec)
+
+mysql> create table contact_addresses( street varchar(150) not null,city varchar(150) not null , state varchar(150) not null, zip int not null, country varchar(150) not null,first_name varchar(150)
+    -> not null, foreign key(first_name) references contact_details(first_name));
+Query OK, 0 rows affected (0.96 sec)
+
+
+mysql> alter table contact_details drop column city;
+Query OK, 0 rows affected (1.97 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table contact_details drop column state;
+Query OK, 0 rows affected (1.48 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table contact_details drop column address;
+Query OK, 0 rows affected (1.69 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table contact_details drop column zip;
+Query OK, 0 rows affected (1.66 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc contact_details;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| first_name        | varchar(150) | NO   | PRI | NULL    |       |
+| last_name         | varchar(150) | NO   |     | NULL    |       |
+| phone_number      | bigint       | NO   |     | NULL    |       |
+| email             | varchar(150) | YES  |     | NULL    |       |
+| address_book_name | varchar(150) | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> alter table contact_details add unique(first_name);
+Query OK, 0 rows affected (0.95 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> show tables;
++-----------------------+
+| Tables_in_addressbook |
++-----------------------+
+| contact_addresses     |
+| contact_details       |
+| contact_types         |
++-----------------------+
+3 rows in set (0.06 sec)
