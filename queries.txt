@@ -28,3 +28,20 @@ mysql> desc contact_details;
 | email        | varchar(150) | YES  |     | NULL    |       |
 +--------------+--------------+------+-----+---------+-------+
 8 rows in set (0.01 sec)
+
+3) UC3 
+
+mysql> insert into contact_details ( first_name,last_name,city,state,address,zip,phone_number,email) values ( 'Mark','Taylor','Hyderabad','Telanagan','Whitefield',500081,852741963,'abc@xyz.com');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into contact_details ( first_name,last_name,city,state,address,zip,phone_number,email) values ( 'Jason','James','Delhi','Haryana','WaterRock',700081,872741963,'opi@xyz.com');
+Query OK, 1 row affected (0.23 sec)
+
+mysql> select * from contact_details;
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| first_name | last_name | city      | state     | address    | zip    | phone_number | email       |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| Jason      | James     | Delhi     | Haryana   | WaterRock  | 700081 |    872741963 | opi@xyz.com |
+| Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+2 rows in set (0.00 sec)
