@@ -93,3 +93,21 @@ mysql> select * from contact_details;
 | Jason      | Cali      | Delhi | Haryana | WaterRock | 700081 |    872741963 | opi@xyz.com |
 +------------+-----------+-------+---------+-----------+--------+--------------+-------------+
 1 row in set (0.00 sec)
+
+6) UC6
+
+mysql> select * from contact_details where city='Hyderabad';
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| first_name | last_name | city      | state     | address    | zip    | phone_number | email       |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from contact_details where state='Telanagan';
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| first_name | last_name | city      | state     | address    | zip    | phone_number | email       |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+1 row in set (0.00 sec)
