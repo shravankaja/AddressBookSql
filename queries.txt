@@ -281,3 +281,46 @@ mysql> show tables;
 | contact_types         |
 +-----------------------+
 3 rows in set (0.06 sec)
+
+13) UC13 
+
+mysql> select * from contact_details as cd right join contact_addresses as ca on cd.first_name=ca.first_name having city = 'Hyderabad';
++------------+-----------+--------------+-------------+-------------------+---------+-----------+------------+--------+---------+------------+
+| first_name | last_name | phone_number | email       | address_book_name | street  | city      | state      | zip    | country | first_name |
++------------+-----------+--------------+-------------+-------------------+---------+-----------+------------+--------+---------+------------+
+| Mark       | Taylor    |    852741963 | abc@xyz.com | myaddressbook     | Street1 | Hyderabad | Telanagana | 500036 | India   | Mark       |
++------------+-----------+--------------+-------------+-------------------+---------+-----------+------------+--------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from contact_details as cd right join contact_addresses as ca on cd.first_name=ca.first_name where city = 'Hyderabad';
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select cd.first_name from contact_details as cd right join contact_addresses as ca on cd.first_name=ca.first_name where city = 'Hyderabad' order by first_name asc;
++------------+
+| first_name |
++------------+
+| Abby       |
+| Mark       |
++------------+
+2 rows in set (0.00 sec)
+
+mysql> select cd.first_name from contact_details as cd right join contact_addresses as ca on cd.first_name=ca.first_name where city = 'Hyderabad' order by first_name desc;
++------------+
+| first_name |
++------------+
+| Mark       |
+| Abby       |
++------------+
+2 rows in set (0.00 sec)
+mysql> select count(*) from contact_details as cd inner join contact_types as ct on cd.first_name=ct.first_name where contact_type='Family';
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
