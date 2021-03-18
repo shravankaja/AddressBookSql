@@ -1,1 +1,10 @@
 Address Book Sql queries
+
+1) UC1 
+
+mysql> create database addressbook;
+Query OK, 1 row affected (0.11 sec)
+
+mysql> use  addressbook;
+Database changed
+
