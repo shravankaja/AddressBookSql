@@ -14,3 +14,17 @@ mysql> create table contact_details ( first_name varchar(150) not null  ,last_na
     -> not null,email varchar(150),primary key(first_name));
 Query OK, 0 rows affected (0.62 sec)
 
+mysql> desc contact_details;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| first_name   | varchar(150) | NO   | PRI | NULL    |       |
+| last_name    | varchar(150) | NO   |     | NULL    |       |
+| city         | varchar(150) | YES  |     | NULL    |       |
+| state        | varchar(150) | YES  |     | NULL    |       |
+| address      | varchar(150) | YES  |     | NULL    |       |
+| zip          | int          | YES  |     | NULL    |       |
+| phone_number | bigint       | NO   |     | NULL    |       |
+| email        | varchar(150) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
