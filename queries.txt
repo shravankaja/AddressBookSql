@@ -111,3 +111,21 @@ mysql> select * from contact_details where state='Telanagan';
 | Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
 +------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
 1 row in set (0.00 sec)
+
+7)UC7
+
+mysql> select count(*) from contact_details where state='Telanagan';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from contact_details where city='Hyderabad';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
