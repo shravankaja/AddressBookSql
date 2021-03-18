@@ -8,3 +8,9 @@ Query OK, 1 row affected (0.11 sec)
 mysql> use  addressbook;
 Database changed
 
+2) UC2 
+
+mysql> create table contact_details ( first_name varchar(150) not null  ,last_name varchar(150) not null, city varchar(150),state varchar(150),address varchar(150),zip int , phone_number bigint
+    -> not null,email varchar(150),primary key(first_name));
+Query OK, 0 rows affected (0.62 sec)
+
