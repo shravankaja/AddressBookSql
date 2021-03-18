@@ -186,3 +186,24 @@ mysql> select count(*) from contact_details where contact_type='family';
 |        2 |
 +----------+
 1 row in set (0.00 sec)
+
+11) UC11
+mysql> select * from contact_details as cd right join contact_types as ct on cd.first_name=ct.first_name
+    -> ;
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+-------------------+------------+--------------+
+| first_name | last_name | city      | state     | address    | zip    | phone_number | email       | address_book_name | first_name | contact_type |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+-------------------+------------+--------------+
+| Abby       | Cherry    | Hyderabad | Telanagan | Whitefield | 510081 |   8545691963 | 852@xyz.com | myaddressbook     | Abby       | Family       |
+| Abby       | Cherry    | Hyderabad | Telanagan | Whitefield | 510081 |   8545691963 | 852@xyz.com | myaddressbook     | Abby       | Friend       |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+-------------------+------------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> select cd.*,ct.contact_type from contact_details as cd right join contact_types as ct on cd.first_name=ct.first_name
+    -> ;
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+-------------------+--------------+
+| first_name | last_name | city      | state     | address    | zip    | phone_number | email       | address_book_name | contact_type |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+-------------------+--------------+
+| Abby       | Cherry    | Hyderabad | Telanagan | Whitefield | 510081 |   8545691963 | 852@xyz.com | myaddressbook     | Family       |
+| Abby       | Cherry    | Hyderabad | Telanagan | Whitefield | 510081 |   8545691963 | 852@xyz.com | myaddressbook     | Friend       |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+-------------------+--------------+
+2 rows in set (0.00 sec)
