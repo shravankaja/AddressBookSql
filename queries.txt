@@ -69,3 +69,27 @@ mysql> select * from contact_details;
 | Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
 +------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
 2 rows in set (0.00 sec)
+
+5) UC5
+
+mysql> select * from contact_details;
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| first_name | last_name | city      | state     | address    | zip    | phone_number | email       |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| Jason      | Cali      | Delhi     | Haryana   | WaterRock  | 700081 |    872741963 | opi@xyz.com |
+| Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> delete from contact_details where first_name='Mark';
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from conatact_details;
+ERROR 1146 (42S02): Table 'addressbook.conatact_details' doesn't exist
+mysql> select * from contact_details;
++------------+-----------+-------+---------+-----------+--------+--------------+-------------+
+| first_name | last_name | city  | state   | address   | zip    | phone_number | email       |
++------------+-----------+-------+---------+-----------+--------+--------------+-------------+
+| Jason      | Cali      | Delhi | Haryana | WaterRock | 700081 |    872741963 | opi@xyz.com |
++------------+-----------+-------+---------+-----------+--------+--------------+-------------+
+1 row in set (0.00 sec)
