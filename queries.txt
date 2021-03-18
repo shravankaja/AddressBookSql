@@ -45,3 +45,27 @@ mysql> select * from contact_details;
 | Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
 +------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
 2 rows in set (0.00 sec)
+
+4) UC4
+
+mysql> select * from contact_details;
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| first_name | last_name | city      | state     | address    | zip    | phone_number | email       |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| Jason      | James     | Delhi     | Haryana   | WaterRock  | 700081 |    872741963 | opi@xyz.com |
+| Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> update contact_details set last_name='Cali' where first_name='Jason';
+Query OK, 1 row affected (0.12 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from contact_details;
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| first_name | last_name | city      | state     | address    | zip    | phone_number | email       |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| Jason      | Cali      | Delhi     | Haryana   | WaterRock  | 700081 |    872741963 | opi@xyz.com |
+| Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+2 rows in set (0.00 sec)
