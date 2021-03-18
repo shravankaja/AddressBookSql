@@ -129,3 +129,23 @@ mysql> select count(*) from contact_details where city='Hyderabad';
 |        1 |
 +----------+
 1 row in set (0.00 sec)
+
+8)UC8
+
+mysql> select * from contact_details where city='Hyderabad' order by first_name asc;
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| first_name | last_name | city      | state     | address    | zip    | phone_number | email       |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| Abby       | Cherry    | Hyderabad | Telanagan | Whitefield | 510081 |   8545691963 | 852@xyz.com |
+| Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from contact_details where city='Hyderabad' order by first_name desc;
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| first_name | last_name | city      | state     | address    | zip    | phone_number | email       |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+| Mark       | Taylor    | Hyderabad | Telanagan | Whitefield | 500081 |    852741963 | abc@xyz.com |
+| Abby       | Cherry    | Hyderabad | Telanagan | Whitefield | 510081 |   8545691963 | 852@xyz.com |
++------------+-----------+-----------+-----------+------------+--------+--------------+-------------+
+2 rows in set (0.00 sec)
